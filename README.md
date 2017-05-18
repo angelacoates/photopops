@@ -1,5 +1,5 @@
 # README
-using "New Age" theme template
+Integrating the "New Age" theme template
 
 
 This README would normally document whatever steps are necessary to get the
