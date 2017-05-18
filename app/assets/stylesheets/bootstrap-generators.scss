@@ -2,8 +2,15 @@
 @import "bootstrap-sprockets.scss";
 @import "bootstrap.scss";
 
+
+
+
 body {
   padding-top: $navbar-height + 10px;
+  background-image: url(http://www.royalcaribbean.com/connect/wp-content/uploads/2016/08/iStock_42991296_MEDIUM-1650x1100.jpg);
+  background-repeat: no-repeat;
+
+
 }
 
 .page-header {
