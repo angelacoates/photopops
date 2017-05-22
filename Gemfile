@@ -30,7 +30,9 @@ gem 'jquery-rails'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'omniauth'
+gem 'omniauth', '~> 1.6', '>= 1.6.1'
+gem 'omniauth-facebook'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
