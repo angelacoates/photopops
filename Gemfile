@@ -53,6 +53,8 @@ gem 'bootstrap-generators', git: 'https://github.com/gstark/bootstrap-generators
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
 gem 'jquery-ui-rails'
+gem 'simple-line-icons-rails'
+
 group :development do
   gem 'awesome_print'
   gem 'dotenv-rails'

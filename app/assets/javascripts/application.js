@@ -14,3 +14,6 @@
 //= require jquery_ujs
 
 //= require 'cable'
+//= require 'bootstrap'
+//= require 'theme/jquery-easing'
+//= require 'theme/new-age'

@@ -161,6 +161,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    simple-line-icons-rails (0.1.2)
+      railties (>= 3.2, <= 5.1)
     sinatra (2.0.0.rc1)
       mustermann (= 1.0.0)
       rack (~> 2.0)
@@ -213,6 +215,7 @@ DEPENDENCIES
   refile!
   refile-postgres
   sass-rails (~> 5.0)
+  simple-line-icons-rails
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
