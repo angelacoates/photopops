@@ -14,8 +14,8 @@ class AddOAuthToUser < ActiveRecord::Migration[5.0]
     add_column :users, :access_token, :string
 
     # If you already had password_digest and email, then uncomment these:
-    # remove_column :users, :email
-    # remove_column :users, :password_digest
+    remove_column :users, :email
+    remove_column :users, :password_digest
   end
   def down
     remove_column :users, :provider
@@ -24,7 +24,7 @@ class AddOAuthToUser < ActiveRecord::Migration[5.0]
     remove_column :users, :access_token
 
     # If you already had password_digest and email, then add these:
-    # add_column :users, :email, :string
-    # add_column :users, :password_digest, :string
+    add_column :users, :email, :string
+    add_column :users, :password_digest, :string
   end
 end

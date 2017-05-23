@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
 # Use postgresql as the database for Active Record
@@ -32,6 +31,7 @@ gem 'jquery-rails'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-instagram', '~> 1.0', '>= 1.0.2'
 
 
 # Use Capistrano for deployment
