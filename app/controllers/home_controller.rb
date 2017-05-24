@@ -5,6 +5,6 @@ class HomeController < ApplicationController
   def theme
   end
 
-  def secondpage
+  def home
   end
 end

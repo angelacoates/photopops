@@ -11,13 +11,17 @@
                 <div class="col-sm-7">
                     <div class="header-content">
                         <div class="header-content-inner">
-                            <h1>Request anyone, anywhere, at aytime to pop up and take your photos so that you'll never miss a moment or be left out of the picture again. </h1>
+                            <h1>Find anyone, anywhere, at aytime to pop up and take your photos so that you'll never miss a moment or be left out of the picture again. </h1>
 
-                            <a href="#download"class="btn btn-outline btn-xl">Sign in with <span class="fa fa-instagram"></span>Instagram</a>
-                            <%= link_to 'Login with facebook', auth_path(provider: 'facebook') %>
+                            <div class="btn btn-outline btn-xl"><%= link_to 'Login with facebook', auth_path(provider: 'facebook') %>
+                            </div>
+
+                            <div class="btn btn-outline btn-xl"><%= link_to 'Login with Instagram', auth_path(provider: 'facebook') %>
+                            </div>
 
 
-                            <a href="#download"class="btn btn-outline btn-xl">Sign in with <span class="fa fa-instagram"></span>Instagram</a>
+
+                            <!-- <a href="#download"class="btn btn-outline btn-xl">Sign in with <span class="fa fa-instagram"></span>Instagram</a> -->
                         </div>
                     </div>
                 </div>

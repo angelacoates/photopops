@@ -1,11 +1,8 @@
 class CreatePhotos < ActiveRecord::Migration[5.0]
-  belongs_to :user
-  include ImageUploader[:image]
-
-def change
+  def change
     create_table :photos do |t|
-
-t.timestamps
+      t.text :image_data
+      t.timestamps
     end
   end
 end

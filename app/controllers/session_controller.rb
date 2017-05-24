@@ -23,6 +23,6 @@ class SessionController < ApplicationController
 
   # Show the failure page
   def failure
-    # TODO, create failure.html.erb
+ # TODO, create failure.html.erb
   end
 end

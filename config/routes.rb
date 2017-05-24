@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get '/logout' => 'session#destroy'
 
   get 'home/index'
-  get 'home/theme'
-  get 'home/secondpage'
+  get 'home/landing'
+  get 'home/home'
 
-  root 'home#theme'
+  root 'home#landing'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
