@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :requests
   has_many :photos, through: :requests
+  # have to add validations and conditions for when certain columns are validated
   # Omniauth will use this to build a *NEW* user for us
   def self.from_omniauth(authentication_data)
     user = User.where(provider: authentication_data['provider'],
