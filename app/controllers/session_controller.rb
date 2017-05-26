@@ -11,7 +11,7 @@ class SessionController < ApplicationController
     if current_user
       redirect_to home_home_path
     else
-      redirect_to auth_path(provider: 'facebook')
+      redirect_to root_path, notice: "There was an error while trying to auhtenticate you"
     end
   end
 
