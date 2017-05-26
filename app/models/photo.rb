@@ -1,5 +1,5 @@
 class Photo < ApplicationRecord
-  belongs_to :user
+  belongs_to :request
   include ImageUploader[:image]
 
 end

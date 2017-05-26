@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524210002) do
+ActiveRecord::Schema.define(version: 20170526030130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,14 +19,17 @@ ActiveRecord::Schema.define(version: 20170524210002) do
     t.text     "image_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "request_id"
+    t.index ["request_id"], name: "index_photos_on_request_id", using: :btree
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string   "photographer_id"
-    t.string   "photo_id"
+    t.integer  "photographer_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "requestor_id"
+    t.integer  "requestor_id"
+    t.index ["photographer_id"], name: "index_requests_on_photographer_id", using: :btree
+    t.index ["requestor_id"], name: "index_requests_on_requestor_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,6 +43,9 @@ ActiveRecord::Schema.define(version: 20170524210002) do
     t.string   "access_token"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.boolean  "pro_camera"
+    t.decimal  "rating"
+    t.boolean  "opt_in"
   end
 
 end
