@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526030822) do
+ActiveRecord::Schema.define(version: 20170526031647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170526030822) do
     t.boolean  "pro_camera",       default: false
     t.decimal  "rating"
     t.boolean  "opt_in",           default: false
+    t.string   "email"
   end
 
 end
