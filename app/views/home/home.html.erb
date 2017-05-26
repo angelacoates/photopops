@@ -4,29 +4,34 @@
         Menu <i class="fa fa-bars"></i>
     </button>
     <div class="container">
-        <a class="navbar-brand" href="#page-top">PhotoPop!</a>
+        <!-- <a class="navbar-brand" href="#page-top">PhotoPop!</a> -->
+        <%= link_to root_path, class: "navbar-brand" do %>
+          PhotoPop!
+        <% end %>
+
         <div class="collapse navbar-collapse" id="navbarExample">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">My Photos</a>
+                  <%= link_to 'My Photos','/home/index' %>
                 </li>
+<!--
+                <li> <%= link_to 'My Photos','/home/index' %> </li>
+                <li> <%= link_to 'My Photos','/home/index' %> </li> -->
+
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Log Out</a>
+                  <%= link_to 'Log Out','/' %>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-
-
-
 <section class="cta">
     <div class="cta-content">
         <div class="container">
-            <!-- <h2>Stop waiting.<br>Start building.</h2> -->
 
-            <a href="#contact" class="btn btn-outline btn-xl">Request Photographer</a>
+            <a href="#request" class="btn btn-outline btn-xl" data-toggle="modal" data-target="#request-photographer">Request Photographer</a>
         </div>
     </div>
     <div class="overlay"></div>
@@ -97,6 +102,95 @@
       </div>
 </section>
 
+<div class="modal fade" id="request-photographer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Let's get started</h4>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-horizontal">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Contact:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="phone number">
+    </div>
+  </div>
+
+
+
+
+
+  <!-- <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">When</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="Date and Time">
+    </div>
+  </div> -->
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Location:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="">
+    </div>
+  </div>
+ <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Occassion:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="Out with friends, Birthday dinner, Family gathering, Proposal, etc.">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Professional Camera
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Needed for entire event
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Special Instructions:</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" rows="3"placeholder="i.e; Tonight I'm proposing to My girlfriend I don't want her to know that there is someone taking pictures. Please be sure to capture as many candid photos as possible through the entire proposal. We will be right in front of the eiffel tower"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    </div>
+  </div>
+</form>
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-warning">Send Request</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
