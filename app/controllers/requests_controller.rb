@@ -1,4 +1,4 @@
-class RequestController < ApplicationController
+class Requests  Controller < ApplicationController
   before_action :authenticate!
 
   def index
@@ -10,7 +10,7 @@ class RequestController < ApplicationController
   end
 
   def new
-    @request = Resquest.new
+    @request = Request.new
   end
 
   def create

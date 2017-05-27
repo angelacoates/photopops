@@ -17,18 +17,6 @@
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <!-- <div class="device-container">
-                    <div class="device-mockup iphone6_plus portrait white">
-                        <div class="device">
-                            <div class="screen">
-                                Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else!
-                                <img src="img/demo-screen-1.jpg" class="img-fluid" alt=""> </div>
-                            <div class="button">
-                                You can hook the "home button" to some JavaScript events or just remove it
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
             <div class="col-lg-8">
                 <div class="container-fluid">
@@ -83,12 +71,96 @@
       </div>
       <div class="modal-body">
 
-  <%= render "requests/form" %>
+        <%= form_for(Request.new, class:"form-horizontal", class: "form-group") do |f| %>
 
+
+        <!-- <form class="form-horizontal"> -->
+  <!-- <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="">
+    </div> -->
+
+
+    <div class="form-group">
+        <%= f.label :name, class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+
+
+
+
+
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Contact:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="phone number">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Location:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="">
+    </div>
+  </div>
+ <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Occassion:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="Out with friends, Birthday dinner, Family gathering, Proposal, etc.">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Professional Camera
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Needed for entire event
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Special Instructions:</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" rows="3"placeholder="i.e; Tonight I'm proposing to My girlfriend I don't want her to know that there is someone taking pictures. Please be sure to capture as many candid photos as possible through the entire proposal. We will be right in front of the eiffel tower"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    </div>
+  </div>
+</form>
+  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-warning">Send</button>
+      </div>
     </div>
   </div>
 </div>
 
+
+<div class="modal-footer">
+      <%= f.submit class: "btn btn-warning" %>
+    </div>
+  </div>
+
+
+<% end %>
 
 
 <footer>
