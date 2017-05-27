@@ -26,7 +26,7 @@ gem 'roda'
 gem 'image_processing'
 gem 'mini_magick', ">= 4.3.5"
 
-# gem 'simple_form'
+gem 'geocoder'
 
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
