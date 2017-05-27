@@ -5,5 +5,4 @@ class Request < ApplicationRecord
   validates :name, presence: true
   validates :occassion, presence: true
   validates :contact, presence: true
-  validates_format_of :contact, with: /\d[0-9]\)*\z/, message: 'Not a valid phone number'
 end

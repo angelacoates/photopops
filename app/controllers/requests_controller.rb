@@ -1,4 +1,4 @@
-class Requests  Controller < ApplicationController
+class RequestController < ApplicationController
   before_action :authenticate!
 
   def index
@@ -14,6 +14,7 @@ class Requests  Controller < ApplicationController
   end
 
   def create
+    @request = Resquest.new
     @request = current_user.requests.create(request_params)
     if @request.valid?
       redirect_to @request

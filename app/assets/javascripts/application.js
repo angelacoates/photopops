@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require 'cable'
-//= require 'bootstrap'
-//= require 'theme/jquery-easing'
-//= require 'theme/new-age'
+//= require cable
+//= require bootstrap
+//= require bootstrap/modal
+//= require theme/jquery-easing
+//= require theme/new-age

@@ -7,5 +7,6 @@ class HomeController < ApplicationController
   end
 
   def home
+    @request = Request.new
   end
 end
