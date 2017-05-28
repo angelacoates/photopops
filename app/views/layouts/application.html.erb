@@ -41,7 +41,7 @@
           <% if current_user %>
            <%= current_user.name %>
           <% else %>
-            Please Log in
+
           <% end %>
         <% end %>
       </div>
@@ -51,6 +51,10 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
             <%= link_to 'My Photos','/home/index' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to 'Home','/home/home' %>
           </li>
 
           <li class="nav-item">

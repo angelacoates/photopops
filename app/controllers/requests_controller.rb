@@ -1,4 +1,4 @@
-class RequestController < ApplicationController
+class RequestsController < ApplicationController
   before_action :authenticate!
 
   def index
@@ -14,10 +14,10 @@ class RequestController < ApplicationController
   end
 
   def create
-    @request = Resquest.new
+    @request = Request.new
     @request = current_user.requests.create(request_params)
     if @request.valid?
-      redirect_to @request
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
