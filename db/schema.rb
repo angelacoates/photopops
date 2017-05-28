@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170527200103) do
+ActiveRecord::Schema.define(version: 20170528192304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170527200103) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.integer  "photographer_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "requestor_id"
@@ -36,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170527200103) do
     t.text     "special_instructions"
     t.float    "latitude"
     t.float    "longitude"
-    t.index ["photographer_id"], name: "index_requests_on_photographer_id", using: :btree
+    t.string   "photographer_id"
     t.index ["requestor_id"], name: "index_requests_on_requestor_id", using: :btree
   end
 
@@ -51,9 +50,9 @@ ActiveRecord::Schema.define(version: 20170527200103) do
     t.string   "access_token"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.boolean  "pro_camera", default: false
+    t.boolean  "pro_camera",       default: false
     t.decimal  "rating"
-    t.boolean  "opt_in", default: false
+    t.boolean  "opt_in",           default: false
     t.string   "email"
     t.float    "latitude"
     t.float    "longitude"

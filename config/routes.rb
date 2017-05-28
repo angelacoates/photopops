@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :requests
-
+  resources :requests do
+    resources :photos, except: :index
+  end
   get    '/auth/:provider'          => 'omniauth#auth', as: :auth
   get    '/auth/:provider/callback' => 'session#create'
   get    '/auth/failure'            => 'session#failure'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/landing'
   get 'home/home'
+  get '/photos' => 'photos#index'
 
   root 'home#landing'
 

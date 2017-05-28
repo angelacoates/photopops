@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   before_action :authenticate!
 
   def index
-    @requests = Resquest.all
+    @requests = Request.all
   end
 
   def show
@@ -14,10 +14,9 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = Request.new
-    @request = current_user.requests.create(request_params)
+    @request = current_user.requests.create!(request_params)
     if @request.valid?
-      redirect_to root_path
+      redirect_to home_home_url
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +34,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:name, :contact, :occassion, :pro_camera, :needed_for_entire_event, :special_instructions)
+    params.require(:request).permit(:name, :contact, :occassion, :pro_camera, :needed_for_entire_event, :special_instructions, :photographer_id)
 
   end
 end

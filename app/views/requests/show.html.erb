@@ -1,0 +1,16 @@
+<%= @request.name %>
+<%= @request.contact %>
+<%= @request.occassion %>
+<%= @request.pro_camera %>
+<%= @request.needed_for_entire_event %>
+<%= @request.special_instructions %>
+
+<br />
+<br />
+
+<%= form_for Photo.new, url: request_photos_path(@request) do |f| %>
+  <%= f.label :image_data %>
+  <%= f.file_field :image_data %>
+
+  <%= f.submit class: 'btn btn-default' %>
+<% end %>
