@@ -7,6 +7,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @photo = @request.photos.new
   end
 
   def new

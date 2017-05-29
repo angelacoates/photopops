@@ -8,12 +8,8 @@
 <br />
 <br />
 
-<%= form_for Photo.new, url: request_photos_path(@request) do |f| %>
-  <!-- <%= f.label :image_data %>
-  <%= f.file_field :image_data %> -->
-
-<%= f.hidden_field :image, value: @request.cached_image_data %>
-<%= f.file_field :image %>
-
+<%= form_for [@request, @photo] do |f| %>
+<%= f.hidden_field :image, value: @photo.cached_image_data %>
+  <%= f.file_field :image %>
   <%= f.submit class: 'btn btn-default' %>
 <% end %>
