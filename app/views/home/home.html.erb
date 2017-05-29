@@ -1,14 +1,12 @@
-
 <section class="cta">
   <div class="cta-content">
     <div class="container">
-
-      <!-- <a href="#request" class="btn btn-outline btn-xl" data-toggle="modal" data-target="#request-photographer">Request Photographer</a> -->
-      <%= link_to 'Request Photographer', new_request_path, { :remote => true, class: 'btn btn-outline btn-xl', 'data-toggle' => "modal", 'data-target' => '#request-photographer' } %>
+      <%= link_to 'Request Photographer', new_request_path, { class: 'btn btn-outline btn-xl', 'data-toggle' => "modal", 'data-target' => '#request-photographer' } %>
     </div>
   </div>
   <div class="overlay"></div>
 </section>
+
 <section class="features" id="features">
   <div class="container">
     <div class="section-heading text-center">
@@ -18,7 +16,6 @@
     </div>
     <div class="row">
       <div class="col-lg-4">
-
       </div>
       <div class="col-lg-8">
         <div class="container-fluid">
@@ -72,108 +69,84 @@
         <h4 class="modal-title" id="myModalLabel">Let's get started</h4>
       </div>
       <div class="modal-body">
-
-
-        <%= form_for(@request, class: "form-horizontal") do |request| %>
-
-
-
-        <div class="form-group">
-          <%= request.label :photographer_id, class: "col-sm-2 control-label" %>
-          <div class="col-sm-10">
-            <%= request.collection_select :photographer_id, User.all, :id, :name, class: "form-control" %>
+        <%= form_for @request, html: { class: "new_request form-horizontal" } do |request| %>
+          <div class="form-group">
+            <%= request.label :photographer_id, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= request.collection_select :photographer_id, User.all, :id, :name, class: "form-control" %>
+            </div>
           </div>
-        </div>
 
-
-
-        <div class="form-group">
-          <%= request.label :name, 'Name', class: "col-sm-2 control-label"%>
-          <div class="col-sm-10">
-            <%= request.text_field :name, class: "form-control" %>
+          <div class="form-group">
+            <%= request.label :name, 'Name', class: "col-sm-2 control-label"%>
+            <div class="col-sm-10">
+              <%= request.text_field :name, class: "form-control" %>
+            </div>
           </div>
-        </div>
 
-
-
-        <div class="form-group">
-          <%= request.label :contact, 'Contact', class: "col-sm-2 control-label"%>
-          <div class="col-sm-10">
-            <%= request.text_field :contact, class: "form-control", placeholder: "phone number" %>
+          <div class="form-group">
+            <%= request.label :contact, 'Contact', class: "col-sm-2 control-label"%>
+            <div class="col-sm-10">
+              <%= request.text_field :contact, class: "form-control", placeholder: "phone number" %>
+            </div>
           </div>
-        </div>
 
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Location:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword3" placeholder="">
+            </div>
+          </div>
 
-      <div class="form-group">
+          <div class="form-group">
+            <%= request.label :occassion, 'Occassion', class: "col-sm-2 control-label"%>
+            <div class="col-sm-10">
+              <%= request.text_field :occassion, class: "form-control", placeholder: "Out with friends, Family gathering, etc." %>
+            </div>
+          </div>
 
-        <label for="inputPassword3" class="col-sm-2 control-label">Location:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" placeholder="">
-        </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10 inline">
+              <%= request.label :pro_camera, class: "checkbox-inline" do %>
+                <%= request.check_box :pro_camera %>
+                Professional Camera
+              <% end %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10 inline">
+              <%= request.label :needed_for_entire_event, class: "checkbox-inline" do %>
+                <%= request.check_box :needed_for_entire_event %>
+                Needed for entire event
+              <% end %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= request.label :special_instructions, 'Special Instructions', class: "col-sm-2 control-label"%>
+            <div class="col-sm-10">
+              <%= request.text_area :special_instructions, class: "form-control", placeholder: "i.e; Tonight I'm proposing to My girlfriend I don't want her to know that there is someone taking pictures. Please be sure to capture as many candid photos as possible through the entire proposal. We will be right in front of the eiffel tower" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <%= request.submit class:'btn btn-warning'%>
+          </div>
+        <% end %>
       </div>
-
-
-      <div class="form-group">
-
-        <%= request.label :occassion, 'Occassion', class: "col-sm-2 control-label"%>
-        <div class="col-sm-10">
-          <%= request.text_field :occassion, class: "form-control", placeholder: "Out with friends, Family gathering, etc." %>
-        </div>
-
-      </div>
-
-
-
-      <div class="form-group">
-
-        <div class="col-sm-offset-2 col-sm-10 inline">
-          <%= request.label :pro_camera, class: "checkbox-inline" do %>
-            <%= request.check_box :pro_camera %>
-            Professional Camera
-          <% end %>
-        </div>
-      </div>
-
-
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10 inline">
-          <%= request.label :needed_for_entire_event, class: "checkbox-inline" do %>
-            <%= request.check_box :needed_for_entire_event %>
-            Needed for entire event
-          <% end %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= request.label :special_instructions, 'Special Instructions', class: "col-sm-2 control-label"%>
-        <div class="col-sm-10">
-          <%= request.text_area :special_instructions, class: "form-control", placeholder: "i.e; Tonight I'm proposing to My girlfriend I don't want her to know that there is someone taking pictures. Please be sure to capture as many candid photos as possible through the entire proposal. We will be right in front of the eiffel tower" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-        </div>
-      </div>
-
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      <%= request.submit class:'btn btn-warning'%>
-
-    </div>
-  </div>
   </div>
 </div>
-
-
-<% end %>
-
 
 <footer>
   <div class="container">
     <p>&copy; 2017 PhotoPop! All Rights Reserved.</p>
-
   </div>
 </footer>
