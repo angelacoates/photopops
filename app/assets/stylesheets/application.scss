@@ -24,3 +24,10 @@
 @import 'fonts';
 @import 'landing';
 @import 'my-photos';
+
+.photographer-success {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  z-index: 99;
+}
