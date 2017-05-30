@@ -3,7 +3,8 @@ class PhotographerMailer < ApplicationMailer
 
   def new_request(request)
     @request = request
-    @photographer = request.photographer
+    @photographer = @request.photographer
+
     mail(to: @photographer.email, subject: "Request to take photos")
   end
 end
