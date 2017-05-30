@@ -8,10 +8,19 @@ class PhotosController < ApplicationController
   def new
     @request = Request.find(params[:request_id])
     @photo = @request.photos.new
+
+    if @request.photographer != current_user
+      redirect_to home_home_url, notice: "You aren't the photographer for this event"
+    end
   end
 
   def create
     @request = Request.find(params[:request_id])
+
+    if @request.photographer != current_user
+      redirect_to home_home_url, notice: "You aren't the photographer for this event"
+    end
+
     @request.photos.create(photo_params)
     redirect_to request_path(@request)
   end
