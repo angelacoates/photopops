@@ -1,4 +1,60 @@
-<%= @request.name %>
+
+
+<section class="features2" id="features2">
+  <div class="container">
+    <div class="section-heading text-center">
+      <h2> <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+Requestor's Information</h2>
+
+      <!-- <hr> -->
+    </div>
+
+    <div class="jumbotron">
+      <!-- <h1> Requestor's Information </h1> -->
+      <h4> Name: </h4>
+         <p> <%= @request.name %></p>
+      <h4> Email: </h4>
+         <p> <%= @request.contact %></p>
+      <h4> Occassion: </h4>
+         <p> <%= @request.occassion %></p>
+      <h4> Professional Camera Needed? </h4>
+         <p> <%= @request.pro_camera %></p>
+      <h4> Needed For Entire Event? </h4>
+         <p> <%= @request.needed_for_entire_event %></p>
+      <h4> Requestor's Comments: </h4>
+         <p> <%= @request.special_instructions %></p>
+      <h4>Location:</h4>
+
+     <br />
+     <br />
+
+      <p><%= form_for [@request, @photo] do |f| %>
+      <%= f.hidden_field :image, value: @photo.cached_image_data %>
+        <%= f.file_field :image %>
+
+        <br />
+        <br />
+
+        <%= f.submit "Upload Photos", class: 'btn btn-warning' %>
+      <% end %></p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <%= @request.name %>
 <%= @request.contact %>
 <%= @request.occassion %>
 <%= @request.pro_camera %>
@@ -12,4 +68,4 @@
 <%= f.hidden_field :image, value: @photo.cached_image_data %>
   <%= f.file_field :image %>
   <%= f.submit class: 'btn btn-default' %>
-<% end %>
+<% end %> -->
