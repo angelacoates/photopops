@@ -23,8 +23,13 @@ Requestor's Information</h2>
       <% else %>
         <p><span class="glyphicon glyphicon-thumbs-down"></span></p>
       <% end %>
+
       <h4> Needed For Entire Event? </h4>
-         <p> <%= @request.needed_for_entire_event %></p>
+         <p> <%= if @request.needed_for_entire_event %></p>
+         <p><span class="glyphicon glyphicon-thumbs-up"></span></p>
+       <% else %>
+         <p><span class="glyphicon glyphicon-thumbs-down"></span></p>
+       <% end %>
       <h4> Requestor's Comments: </h4>
          <p> <%= @request.special_instructions %></p>
       <h4>Location:</h4>
