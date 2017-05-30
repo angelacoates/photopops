@@ -19,7 +19,7 @@ class RequestsController < ApplicationController
     if @request.valid?
       flash[:success] = "Your request has been sent and your photographer is on their way!"
       @photographer = User.find(@request.photographer_id)
-      @request_url = "https://amcphotopops.herokuapp.com/requests/1"
+      @request_url = request_url(@request)
       PhotographerMailer.new_request(@photographer, @request_url).deliver
       redirect_to home_home_url
     else
