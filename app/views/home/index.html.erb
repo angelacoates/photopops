@@ -6,11 +6,16 @@
         My Photos
       </h1>
     </div>
+
     <div class="row">
+      <% 1.times do %>
       <% current_user.photos.each do |photo| %>
-        <% if photo.image_url(:medium) %>
-          <%= image_tag(photo.image_url(:medium), class: "photo-image") %>
+        <% if photo.image_url(:small) %>
+          <div class="col-xs-3 col-sm-3">
+            <%= image_tag(photo.image_url(:small), class: "my-photo img-thumbnail") %>
+          </div>
         <% end %>
+      <% end %>
       <% end %>
     </div>
   </div>

@@ -18,7 +18,11 @@ Requestor's Information</h2>
       <h4> Occassion: </h4>
          <p> <%= @request.occassion %></p>
       <h4> Professional Camera Needed? </h4>
-         <p> <%= @request.pro_camera %></p>
+      <% if @request.pro_camera %>
+        <p><span class="glyphicon glyphicon-thumbs-up"></span></p>
+      <% else %>
+        <p><span class="glyphicon glyphicon-thumbs-down"></span></p>
+      <% end %>
       <h4> Needed For Entire Event? </h4>
          <p> <%= @request.needed_for_entire_event %></p>
       <h4> Requestor's Comments: </h4>

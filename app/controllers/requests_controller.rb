@@ -22,9 +22,8 @@ class RequestsController < ApplicationController
     @request = current_user.requests.create!(request_params)
     if @request.valid?
       flash[:success] = "Your request has been sent and your photographer is on their way!"
-      @photographer = User.find(@request.photographer_id)
-      @request_url = request_url(@request)
-      PhotographerMailer.new_request(@photographer, @request_url).deliver
+
+      PhotographerMailer.new_request(@request).deliver
       redirect_to home_home_url
     else
       render :new, status: :unprocessable_entity
