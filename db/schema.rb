@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 20170528224100) do
     t.string   "access_token"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.boolean  "pro_camera", default: false
+    t.boolean  "pro_camera",       default: false
     t.decimal  "rating"
-    t.boolean  "opt_in", default: false
+    t.boolean  "opt_in",           default: false
     t.string   "email"
     t.float    "latitude"
     t.float    "longitude"

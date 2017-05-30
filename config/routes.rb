@@ -2,11 +2,12 @@ Rails.application.routes.draw do
 
   mount Shrine::DownloadEndpoint => "/attachments"
 
-
   resources :requests do
     resources :photos, except: :index
-
   end
+
+  resources :users
+
   get    '/auth/:provider'          => 'omniauth#auth', as: :auth
   get    '/auth/:provider/callback' => 'session#create'
   get    '/auth/failure'            => 'session#failure'

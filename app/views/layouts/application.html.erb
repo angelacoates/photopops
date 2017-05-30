@@ -58,7 +58,9 @@
           </li>
 
           <li class="nav-item">
-            <%= link_to 'Update Profile', new_request_path, { 'data-toggle' => "modal", 'data-target' => '#request-photographer' } %>
+          <% if logged_in? %>
+            <%= link_to 'Update Profile', edit_user_path(current_user), { 'data-toggle' => "modal", 'data-target' => '#update-profile' } %>
+          <% end %>
           </li>
 
           <li class="nav-item">

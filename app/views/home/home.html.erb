@@ -147,54 +147,32 @@
 </div>
 
 
-<div class="modal fade" id="Update Profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="update-profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Let's get started</h4>
+        <h4 class="modal-title" id="myModalLabel">Profile</h4>
       </div>
       <div class="modal-body">
-        <%= form_for @request, html: { class: "new_request form-horizontal" } do |request| %>
-          <div class="form-group">
-            <%= request.label :photographer_id, class: "col-sm-2 control-label" %>
-            <div class="col-sm-10">
-              <%= request.collection_select :photographer_id, User.where.not(id: current_user.id).where(opt_in: true), :id, :name, class: "form-control" %>
-            </div>
-          </div>
+        <%= form_for current_user, html: { class: "new_request form-horizontal" } do |user| %>
 
-          <div class="form-group">
-            <%= request.label :name, 'Name', class: "col-sm-2 control-label"%>
-            <div class="col-sm-10">
-              <%= request.text_field :name, class: "form-control" %>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <%= request.label :contact, 'Contact', class: "col-sm-2 control-label"%>
-            <div class="col-sm-10">
-              <%= request.text_field :contact, class: "form-control", placeholder: "phone number" %>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">Location:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputPassword3" placeholder="">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <%= request.label :occassion, 'Occassion', class: "col-sm-2 control-label"%>
-            <div class="col-sm-10">
-              <%= request.text_field :occassion, class: "form-control", placeholder: "Out with friends, Family gathering, etc." %>
-            </div>
-          </div>
 
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10 inline">
-              <%= request.label :pro_camera, class: "checkbox-inline" do %>
-                <%= request.check_box :pro_camera %>
+              <%= user.label :pro_camera, class: "checkbox-inline" do %>
+                <%= user.check_box :pro_camera %>
                 Professional Camera
               <% end %>
             </div>
@@ -202,19 +180,13 @@
 
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10 inline">
-              <%= request.label :needed_for_entire_event, class: "checkbox-inline" do %>
-                <%= request.check_box :needed_for_entire_event %>
-                Needed for entire event
+              <%= user.label :opt_in, class: "checkbox-inline" do %>
+                <%= user.check_box :opt_in %>
+              Available
               <% end %>
             </div>
           </div>
 
-          <div class="form-group">
-            <%= request.label :special_instructions, 'Special Instructions', class: "col-sm-2 control-label"%>
-            <div class="col-sm-10">
-              <%= request.text_area :special_instructions, class: "form-control", placeholder: "i.e; Tonight I'm proposing to My girlfriend I don't want her to know that there is someone taking pictures. Please be sure to capture as many candid photos as possible through the entire proposal. We will be right in front of the eiffel tower" %>
-            </div>
-          </div>
 
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
@@ -223,7 +195,7 @@
 
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <%= request.submit class:'btn btn-warning'%>
+            <%= user.submit "Save", class:'btn btn-warning'%>
           </div>
         <% end %>
       </div>
@@ -231,12 +203,6 @@
   </div>
 </div>
 
-
-
-#Create another form modal for "update drop button"
-#create partials for forms "create request and update profile"
-# if user is
-#
 
 
 <footer>

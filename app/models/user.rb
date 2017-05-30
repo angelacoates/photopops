@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :requests, foreign_key: :requestor_id
   has_many :photos, through: :requests
 
+#  geocoded_by :ip_address
+#  after_validation :geocode
   #
   # have to add validations and conditions for when certain columns are validated
   # Omniauth will use this to build a *NEW* user for us
