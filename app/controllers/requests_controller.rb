@@ -24,9 +24,13 @@ class RequestsController < ApplicationController
       flash[:success] = "Your request has been sent and your photographer is on their way!"
 
       PhotographerMailer.new_request(@request).deliver
+      RequestorMailer.new_request(@request).deliver
+
       redirect_to home_home_url
     else
+
       render :new, status: :unprocessable_entity
+
     end
   end
 
