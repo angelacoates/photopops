@@ -7,6 +7,6 @@
     end
 
     def home
-      @request = Request.new
+      @request = Request.new(name: current_user.name, contact: current_user.email)
     end
   end
