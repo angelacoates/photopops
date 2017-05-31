@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
   def create
     @request = current_user.requests.create!(request_params)
     if @request.valid?
-      flash[:success] = "Your request has been sent and your photographer is on their way!"
+      flash[:success] = "Your request has been sent!"
 
       PhotographerMailer.new_request(@request).deliver
       RequestorMailer.new_request(@request).deliver

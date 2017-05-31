@@ -15,7 +15,7 @@
         <% if photo.image_url(:medium) %>
           <div class="col-xs-3 col-md-3 my-photo">
             <%= image_tag(photo.image_url(:medium), class: "img-thumbnail") %>
-            <%= link_to request_photo_path(current_user, photo.id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+            <%= link_to request_photo_path(current_user, photo.id), method: :delete, data: { confirm: 'Delete this photo?' }, remote: true do %>
               <span class="glyphicon glyphicon-trash"></span>
             <% end %>
           </div>
