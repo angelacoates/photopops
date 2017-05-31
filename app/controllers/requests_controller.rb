@@ -41,6 +41,7 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+  
   end
 
   private

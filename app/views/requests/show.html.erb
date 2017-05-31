@@ -15,7 +15,7 @@ Requestor's Information</h2>
          <p> <%= @request.name %></p>
       <h4> Email: </h4>
          <p> <%= @request.contact %></p>
-      <h4> Occassion: </h4>
+      <h4> occasion: </h4>
          <p> <%= @request.occassion %></p>
 
 
@@ -55,31 +55,3 @@ Requestor's Information</h2>
 
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <%= @request.name %>
-<%= @request.contact %>
-<%= @request.occassion %>
-<%= @request.pro_camera %>
-<%= @request.needed_for_entire_event %>
-<%= @request.special_instructions %>
-
-<br />
-<br />
-
-<%= form_for [@request, @photo] do |f| %>
-<%= f.hidden_field :image, value: @photo.cached_image_data %>
-  <%= f.file_field :image %>
-  <%= f.submit class: 'btn btn-default' %>
-<% end %> -->

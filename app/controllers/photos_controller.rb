@@ -1,6 +1,10 @@
 class PhotosController < ApplicationController
   before_action :authenticate!
 
+  def show
+    @photo = current_user.photos.find(params[:id])
+  end
+
   def index
     @photos = current_user.photos
   end
@@ -23,6 +27,13 @@ class PhotosController < ApplicationController
 
     @request.photos.create(photo_params)
     redirect_to request_path(@request)
+  end
+
+  def destroy
+    @request = Request.find(params[:request_id])
+    @photo = current_user.photos.find(params[:id])
+    @photo.destroy
+    redirect_to  home_index_path, notice: "Photo was successfully deleted."
   end
 
   private

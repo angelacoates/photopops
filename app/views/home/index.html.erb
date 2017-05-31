@@ -1,3 +1,9 @@
+
+
+    </div>
+  </div>
+</header>
+
 <header class="masthead">
   <div class="container">
     <div class="page-header">
@@ -12,7 +18,11 @@
       <% current_user.photos.each do |photo| %>
         <% if photo.image_url(:small) %>
           <div class="col-xs-3 col-sm-3">
-            <%= image_tag(photo.image_url(:small), class: "my-photo img-thumbnail") %>
+            <%= link_to request_photo_path(current_user, photo.id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+              <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+          <%= image_tag(photo.image_url(:small), class: "my-photo img-thumbnail") %>
+
           </div>
         <% end %>
       <% end %>
