@@ -17,19 +17,23 @@ Requestor's Information</h2>
          <p> <%= @request.contact %></p>
       <h4> Occassion: </h4>
          <p> <%= @request.occassion %></p>
+
+
       <h4> Professional Camera Needed? </h4>
       <% if @request.pro_camera %>
         <p><span class="glyphicon glyphicon-thumbs-up"></span></p>
       <% else %>
         <p><span class="glyphicon glyphicon-thumbs-down"></span></p>
       <% end %>
-
       <h4> Needed For Entire Event? </h4>
-         <p> <%= if @request.needed_for_entire_event %></p>
+      <%= if @request.needed_for_entire_event? %>
          <p><span class="glyphicon glyphicon-thumbs-up"></span></p>
        <% else %>
          <p><span class="glyphicon glyphicon-thumbs-down"></span></p>
        <% end %>
+
+
+
       <h4> Requestor's Comments: </h4>
          <p> <%= @request.special_instructions %></p>
       <h4>Location:</h4>
