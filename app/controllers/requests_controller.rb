@@ -41,13 +41,13 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-  
+
   end
 
   private
 
   def request_params
-    params.require(:request).permit(:name, :contact, :occassion, :pro_camera, :needed_for_entire_event, :special_instructions, :photographer_id)
+    params.require(:request).permit(:name, :contact, :location, :address, :occassion, :pro_camera, :needed_for_entire_event, :special_instructions, :photographer_id)
 
   end
 end
