@@ -33,7 +33,8 @@ class PhotosController < ApplicationController
     @request = Request.find(params[:request_id])
     @photo = current_user.photos.find(params[:id])
     @photo.destroy
-    redirect_to  home_index_path, notice: "Photo was successfully deleted."
+
+    redirect_to home_index_path, notice: "Photo was successfully deleted."
   end
 
   private
