@@ -5,6 +5,6 @@ class RequestorMailer < ApplicationMailer
     @request = request
     @photographer = @request.photographer
 
-    mail(to: @request.requestor.email, subject: "Hey heres your photographer ")
+    mail(to: @request.requestor.email, subject: "Hey here's your photographer ")
   end
 end

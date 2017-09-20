@@ -1,4 +1,4 @@
-class RequestsController < ApplicationController
+ class RequestsController < ApplicationController
   before_action :authenticate!
 
   def index
